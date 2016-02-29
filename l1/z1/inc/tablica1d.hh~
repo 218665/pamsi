@@ -1,0 +1,11 @@
+#ifndef TABLICA1D
+#define TABLICA1D
+class tablica1D
+{
+private:
+  int* tablica_ptr;
+  int rozmiar=10;
+public:
+  
+}
+#endif

@@ -1,0 +1,8 @@
+#include <iostream.hh>
+#include <tablica1d.hh>
+using namespace std;
+
+int main()
+{
+  
+}
