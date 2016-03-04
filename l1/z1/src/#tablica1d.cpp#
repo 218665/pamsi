@@ -13,17 +13,15 @@ void tablica1D::DodajElement(int Element)
 {
   int *tablica_pom;
 
-  if(index<rozmiar-1) tablica_ptr[++index]=Element;
+  if(obecny<ostatni) tablica_ptr[++]=Element;
 
   else {
-    ++rozmiar;
     tablica_pom = new int [rozmiar];
     for (int i=0; i<rozmiar; ++i) tablica_pom[i]=tablica_ptr[i]; 
     delete [] tablica_ptr;
-    tablica_ptr = new int [rozmiar];
+    tablica_ptr = new int [rozmiar*=2];
     for (int i=0; i<rozmiar; ++i) tablica_ptr[i]=tablica_pom[i];
     tablica_ptr[++index]=Element;
-    delete [] tablica_pom;
   }
 
 }
