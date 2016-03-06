@@ -1,5 +1,4 @@
 #include "../inc/tablica1d.hh"
-#include <iostream>
 using namespace std;
 
 void tablica1D::Wypisz()
@@ -25,10 +24,21 @@ void tablica1D::DodajElement(int Element)
 void tablica1D::reAlokuj ()
 {
   int *tablica_pom;
-  tablica_pom = new int [_rozmiar];
-  for (int i=0; i<_rozmiar; ++i) tablica_pom[i]=_tablica_ptr[i]; 
+  tablica_pom = new int [_index+1];
+  for (int i=0; i<= _index; ++i) tablica_pom[i]=_tablica_ptr[i]; 
   delete [] _tablica_ptr;
   _tablica_ptr = new int [_rozmiar];
-  for (int i=0; i < _rozmiar; ++i) _tablica_ptr[i]=tablica_pom[i];
+  for (int i=0; i <= _index; ++i) _tablica_ptr[i]=tablica_pom[i];
   delete [] tablica_pom;
 }
+
+int tablica1D::UsunElement ()
+{
+  int Element;
+  if(_index==-1) return 0;
+  else {
+    Element = _tablica_ptr[_index];
+    return Element;
+  }
+}
+

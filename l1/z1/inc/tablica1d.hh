@@ -1,7 +1,12 @@
 #ifndef TABLICA1D
 #define TABLICA1D
 #include <cstdlib>
+#include <iostream>
 
+
+/*Jednowymiarowa tablica danych
+ *Tablica alokowana dynamicznie
+ */
 class tablica1D
 {
 private:
@@ -12,21 +17,22 @@ private:
   /*Trzy strategie zwiekszania rozmiaru tablicy
    *Tylko jedna może być nie zakomentowana
    */
-  void ZwiekszRozmiar() {++_rozmiar;}
-  // void ZwiekszRozmiar() {_rozmiar*=2;}
   //void ZwiekszRozmiar() {++_rozmiar;}
+  //void ZwiekszRozmiar() {_rozmiar*=2;}
+  void ZwiekszRozmiar() {_rozmiar*=10;}
   
   /*Realokacja pamieci
    *Alokujemy na nowo tablice z nowym rozmiarem
    */
   void reAlokuj ();
+
 public:
   tablica1D()  {_tablica_ptr = new int [_rozmiar];} //konstruktor
   ~tablica1D() {delete [] _tablica_ptr;} //destruktor
   int Rozmiar () {return _index+1;}
   void Wypisz(); //Wypisywanie elementów tablicy
   void DodajElement(int Element);
- 
-  
+  int UsunElement();
 };
+
 #endif
