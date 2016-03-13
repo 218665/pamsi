@@ -2,11 +2,8 @@
 #define TABLICA1D
 #include "Itablica1d.hh"
 
-class tablica1D: public <int> Itablica1D
+class tablica1D: public  Itablica1D<int>
 {
-protected:
-  int rozmiar=10;
-public:
 
 };
 

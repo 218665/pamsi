@@ -6,7 +6,8 @@ class tablica1Dtest: public tablica1D
 {
 public:
   void Wypisz();
-  bool WypelnijTablice();
+  bool WypelnijTablice(int LiczbaElementow);
+  void Reset();
 };
 
 #endif
