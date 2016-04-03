@@ -17,9 +17,9 @@ private:
   /*Trzy strategie zwiekszania rozmiaru tablicy
    *Tylko jedna może być nie zakomentowana
    */
-  //void ZwiekszRozmiar() {++_rozmiar;}
+  void ZwiekszRozmiar() {++_rozmiar;}
   //void ZwiekszRozmiar() {_rozmiar*=2;}
-  void ZwiekszRozmiar() {_rozmiar*=10;}
+  //void ZwiekszRozmiar() {_rozmiar*=10;}
   
   /*Realokacja pamieci
    *Alokujemy na nowo tablice z nowym rozmiarem

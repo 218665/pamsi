@@ -1,11 +1,12 @@
 #include "../inc/StackTest.hh"
 using namespace std;
 
+
 void StackTest::display()
 {
   for (int i= 0; i < size(); ++i)
-    cout << Tablica[i] <<" ";
-  cout << endl;
+    std::cout << Tablica[i] <<" ";
+  std::cout << endl;
 }
 
 void StackTest::fill(int LiczbaElementow)
@@ -14,3 +15,4 @@ void StackTest::fill(int LiczbaElementow)
     push(rand()%100);
    
 }
+

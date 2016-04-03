@@ -4,18 +4,15 @@
 #include <iomanip>
 #include <cstdlib>
 #include <fstream>
-using namespace std;
+
 class IStoper
 {
-private:
-  double startTime;
-  double stopTime;
-  bool isWork = false;
+
 public:
-  void start() {startTime = static_cast <double> (clock()); isWork =true;}
-  void stop();
-  double getElapsedTime() {return (stopTime - startTime)/CLOCKS_PER_SEC;}
-  bool dumpToFile(ofstream& Plik);
+  virtual void start()=0;
+  virtual void stop()=0;
+  virtual double getElapsedTime() =0;
+  virtual bool dumpToFile(ofstream& Plik)=0;
 };
 
 

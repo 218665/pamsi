@@ -3,12 +3,9 @@
 #include "tablica1dtest.hh"
 class IRunnable
 {
-private:
-  tablica1Dtest Runner;
-  int dystans;
 public:
-  bool run();
-  bool prepare(int size);
+  virtual bool run()=0;
+  virtual bool prepare(int)=0;
 };
 
 

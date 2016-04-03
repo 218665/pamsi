@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../inc/IRunnable.hh"
-#include "../inc/IStoper.hh"
+#include "../inc/tablica1dtest.hh"
+#include "../inc/Stoper.hh"
 using namespace std;
 #define LAPS 10
 #define ELEM 5
@@ -9,9 +9,9 @@ int main()
 {
   int liczbaElementow[ELEM] = {10, 1000, 100000, 1000000, 100000000};
   double Srednia;
-  IRunnable Bolt;
+  tablica1Dtest Bolt;
   ofstream Wyniki, WynikiSrednie;
-  IStoper czas;
+  Stoper czas;
 
   WynikiSrednie.open("SredniaIII.csv");
   Wyniki.open("WynikiIII.csv");
@@ -45,5 +45,9 @@ int main()
     }
     WynikiSrednie << liczbaElementow[j] << "," << Srednia << endl;
   }
+  Bolt.prepare(10);
+  Bolt.run();
+  Bolt.Wypisz();
+
 }
 

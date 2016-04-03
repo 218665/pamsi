@@ -29,3 +29,19 @@ bool tablica1Dtest::WypelnijTablice(int LiczbaElementow)
     }
   return true;
 }
+
+bool tablica1Dtest::run()
+{
+  if(WypelnijTablice(dystans))
+    return true;
+  else 
+    return false;
+}
+
+bool tablica1Dtest::prepare(int size)
+{
+  Reset(); 
+  dystans = size;
+  return true;
+}
+

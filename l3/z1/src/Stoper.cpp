@@ -1,14 +1,14 @@
-#include "../inc/IStoper.hh"
+#include "../inc/Stoper.hh"
 
 
-void IStoper::stop()
+void Stoper::stop()
 {
-  if (isWork) stopTime = static_cast <double> (clock());
+  if (isWork) stopTime =  std::chrono::steady_clock::now();
   else std::cerr << "Stoper już zatrzymany"<< std::endl;
   isWork = false;
 }
 
-bool IStoper::dumpToFile( ofstream& Plik)
+bool Stoper::dumpToFile( ofstream& Plik)
 {
   if (Plik.is_open())
     {
@@ -18,4 +18,3 @@ bool IStoper::dumpToFile( ofstream& Plik)
   else 
     return false;
 }
-

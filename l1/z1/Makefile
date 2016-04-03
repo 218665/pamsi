@@ -1,4 +1,4 @@
-CCFLAGS= -Wall -pedantic -std=c++11 -g
+CCFLAGS= -Wall -pedantic -std=c++11 -g 
 
 start: zad1
 	./zad1

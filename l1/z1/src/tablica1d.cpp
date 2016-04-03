@@ -24,12 +24,13 @@ void tablica1D::DodajElement(int Element)
 void tablica1D::reAlokuj ()
 {
   int *tablica_pom;
-  tablica_pom = new int [_index+1];
+  tablica_pom = new int [_rozmiar];
   for (int i=0; i<= _index; ++i) tablica_pom[i]=_tablica_ptr[i]; 
   delete [] _tablica_ptr;
-  _tablica_ptr = new int [_rozmiar];
-  for (int i=0; i <= _index; ++i) _tablica_ptr[i]=tablica_pom[i];
-  delete [] tablica_pom;
+  _tablica_ptr = tablica_pom;
+  //_tablica_ptr = new int [_rozmiar];
+  //for (int i=0; i <= _index; ++i) _tablica_ptr[i]=tablica_pom[i];
+  //delete [] tablica_pom;
 }
 
 int tablica1D::UsunElement ()

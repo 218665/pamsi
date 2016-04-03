@@ -1,19 +1,21 @@
 #include <iostream>
 #include "../inc/IRunnable.hh"
-#include "../inc/IStoper.hh"
+#include "../inc/Stoper.hh"
 #include "../inc/ListTest.hh"
+#include "../inc/StackTest.hh"
+#include "../inc/QueueTest.hh"
 using namespace std;
 #define LAPS 10
 #define ELEM 5
 
 int main()
 {
-  
+  /* 
   int liczbaElementow[ELEM] = {10, 1000, 10000, 100000, 1000000};
   double Srednia;
-  IRunnable Bolt;
+  ListTest Bolt;
   ofstream Wyniki, WynikiSrednie;
-  IStoper czas;
+  Stoper czas;
 
   WynikiSrednie.open("Srednia.csv");
   Wyniki.open("Wyniki.csv");
@@ -51,6 +53,59 @@ int main()
       } 
     }
 	   WynikiSrednie << liczbaElementow[j] << "," << Srednia << endl;
-  }  
+  }
+  */
+  ListTest Lista;
+  StackTest Stos;
+  QueueTest Kolejka;
+  Lista.prepare(10);
+  Lista.display();
+  cout<<Lista.get(9)<<endl;
+  Lista.reset();
+  Lista.display();
+  Lista.prepare(10);
+  try{  
+    Lista.get(11);
+  }
+  catch(EmptyListException)
+    {
+      cout<<"Wyjatek"<<endl;
+    }
+  
+  try{
+    Stos.pop();
+    }
+  catch(EmptyStackException)
+    {
+      cout<<"Stos pusty!"<<endl;
+    }
+  Stos.fill(10);
+  Stos.display();
+  cout<<Stos.pop()<<endl;
+  Stos.display();
+  Stos.push(2);
+  Stos.display();
+  for(int i =0; i<10 ; ++i)
+    Stos.pop();
+  Stos.display();
+
+   try{
+    Kolejka.dequeue();
+    }
+  catch(EmptyQueueException)
+    {
+      cout<<"Kolejka pusta!"<<endl;
+    }
+  Kolejka.fill(10);
+  Kolejka.display();
+  cout<< Kolejka.dequeue() <<endl;
+  Kolejka.display();
+  Kolejka.enqueue(3);
+  Kolejka.display();
+  for(int i = 0; i < 10; ++i)
+    Kolejka.dequeue();
+  Kolejka.display();
+  if(Kolejka.isEmpty())
+    cout<<"Pusta"<<endl;
 }
 

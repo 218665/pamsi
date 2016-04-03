@@ -30,7 +30,6 @@ void ListTest::reset()
 {
   while(!isEmpty())
     Tablica.UsunElement();
-    
 }
 
 int ListTest::find(string item)
@@ -40,4 +39,21 @@ int ListTest::find(string item)
       return i;
   }
   return -1;
+}
+bool ListTest::run()
+{
+  if(find(klucz)>0)
+    return true;
+  else 
+    return false;
+}
+
+bool ListTest::prepare(int size)
+{
+  reset(); 
+  if(load("test.doc", size)){
+    klucz = get(rand()%size);
+    return true;
+  }
+  else return  false;
 }
