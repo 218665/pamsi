@@ -12,8 +12,24 @@ public:
   void display();
   void reset();
   int find(string item);
-  bool run();
-  bool prepare(int size);
+
+  virtual bool run()
+  {
+    if(find(klucz)>0)
+      return true;
+    else 
+      return false;
+  }
+
+  virtual bool prepare(int size)
+  {
+    reset(); 
+    if(load("test.doc", size)){
+      klucz = get(rand()%size);
+      return true;
+    }
+    else return  false;
+  }
 };
 
 

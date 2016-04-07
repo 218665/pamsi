@@ -17,6 +17,7 @@
 template <typename Typ>
 class IList
 {
+public:
   /*!
     \brief Zapisywanie na liste
   */

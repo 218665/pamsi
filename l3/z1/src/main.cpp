@@ -58,6 +58,7 @@ int main()
   ListTest Lista;
   StackTest Stos;
   QueueTest Kolejka;
+ 
   Lista.prepare(10);
   Lista.display();
   cout<<Lista.get(9)<<endl;
@@ -68,13 +69,13 @@ int main()
     Lista.get(11);
   }
   catch(EmptyListException)
-    {
+    {  
       cout<<"Wyjatek"<<endl;
     }
   
   try{
     Stos.pop();
-    }
+  }
   catch(EmptyStackException)
     {
       cout<<"Stos pusty!"<<endl;
@@ -89,9 +90,9 @@ int main()
     Stos.pop();
   Stos.display();
 
-   try{
+  try{
     Kolejka.dequeue();
-    }
+  }
   catch(EmptyQueueException)
     {
       cout<<"Kolejka pusta!"<<endl;
@@ -107,5 +108,6 @@ int main()
   Kolejka.display();
   if(Kolejka.isEmpty())
     cout<<"Pusta"<<endl;
+
 }
 

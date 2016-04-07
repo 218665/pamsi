@@ -18,6 +18,7 @@
 template <typename Typ>
 class IStack
 {
+public:
   /*!
     \brief Rozmiar stosu
   */

@@ -28,7 +28,7 @@ public:
 
     \return Zwraca liczbę elementów zapisanych w kolejce
   */
-  int size(){return Tablica.Index() +1;}
+ virtual int size(){return Tablica.Index() +1;}
  /*!
     \brief Czy pusty?
     
@@ -37,8 +37,8 @@ public:
     \retval true - kolejka pusty
     \retval false - w kolejce są elementy
   */
-  bool isEmpty(){
-    if(Tablica.Index() > 0) return false;
+  virtual bool isEmpty(){
+    if(Tablica.Index() >= 0) return false;
     else return true;
   }
 
@@ -49,7 +49,7 @@ public:
 
     \param[in] item - element, który chcemy umieścić w kolejce
   */
-  void enqueue(Typ item)
+  virtual void enqueue(Typ item)
   {
     Tablica.DodajElement(item);
   }
@@ -60,7 +60,7 @@ public:
     \exception EmptyQueueException wyjątek pustej kolejki
     \return Zwraca usunięty element
   */
-  Typ dequeue()
+  virtual Typ dequeue()
     throw (EmptyQueueException)
   {
     
@@ -75,7 +75,7 @@ public:
     \exception EmptyQueueException wyjątek pustej kolejki
     \return Zwraca pierwszy element w kolejce, bez jego usuwania
   */
-  Typ front()
+  virtual Typ front()
     throw (EmptyQueueException)
   {
     if (Tablica.Index() < 0) throw EmptyQueueException();

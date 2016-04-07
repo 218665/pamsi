@@ -10,9 +10,9 @@ private:
   std::chrono::steady_clock::time_point stopTime;
   bool isWork = false;
 public:
-  void start() {  startTime = std::chrono::steady_clock::now();isWork =true;}
-  void stop();
-  double getElapsedTime() {return  std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime).count()/1e6;}
-  bool dumpToFile(ofstream& Plik);
+  virtual  void start() {  startTime = std::chrono::steady_clock::now();isWork =true;}
+  virtual void stop();
+  virtual double getElapsedTime() {return  std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime).count()/1e6;}
+  virtual bool dumpToFile(ofstream& Plik);
 };
 #endif

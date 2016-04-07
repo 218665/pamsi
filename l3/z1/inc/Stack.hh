@@ -25,7 +25,7 @@ public:
 
     \return Zwraca liczbę elementów zapisanych na stosie
   */
-  int size(){return Tablica.Index() + 1; }
+  virtual int size(){return Tablica.Index() + 1; }
  
   /*!
     \brief Czy pusty?
@@ -35,8 +35,8 @@ public:
     \retval true - stos pusty
     \retval false - na stosie są elementy
   */
-  bool isEmpty(){
-    if(Tablica.Index() > 0) return false;
+  virtual bool isEmpty(){
+    if(Tablica.Index() >= 0) return false;
     else return true;
   }
 
@@ -47,7 +47,7 @@ public:
 
     \param[in] item - element, który chcemy umieścić na stosie
   */
-  void push(Typ item)
+  virtual void push(Typ item)
   {
     Tablica.DodajElement(item);
   }
@@ -59,7 +59,7 @@ public:
     \exception EmptyStackException wyjątek pustego stosu
     \return Zwraca usunięty element
   */
-  Typ pop()
+  virtual Typ pop()
     throw (EmptyStackException)
   {
     if (Tablica.Index() < 0) throw EmptyStackException();
@@ -74,7 +74,7 @@ public:
     \exception EmptyStackException wyjątek pustego stosu
     \return Zwraca element ze szczytu, bez jego usuwania
   */
-  Typ top()
+  virtual Typ top()
     throw (EmptyStackException)
   {
     if (Tablica.Index() < 0) throw EmptyStackException();
