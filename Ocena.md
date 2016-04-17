@@ -13,3 +13,11 @@ Sprawozdanie zawiera poprawne wnioski i wykresy.
 
 
 # Lab4 - ADT, lista / kolejka / stos
+
+Ocena: 3
+
+# Lab5 - sortowanie
+
+# Lab6 - tablica asocjacyjna
+
+brak sprawozdania
