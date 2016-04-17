@@ -2,16 +2,27 @@
 #define TABL_HASH_HH
 #include "TablicaAsoc.hh"
 #include "List.hh"
-#define BUCKETS 5
-class TablicaHash: public TablicaAsoc
+#define BUCKETS 10000
+#include "Node.hh"
+
+
+template <class Typ>
+class TablicaHash
 {
 private:
-  List* Tablica[BUCKETS];
-  int hash(string);
+  List< Node<Typ> > Tablica[BUCKETS];
+  unsigned int hash(string word) const;
 public:
-  virtual string operator [] (string);
-  virtual string& operator [] (string);
-}
+  void add(string key ,Typ value);
+  Typ get (string key) const;
+  Typ& get (string key);
+  Typ remove (string key);
+  void clear();
+  void display();
+};
+
+#include "../src/TablicaHash.cpp"
+
 
 
 #endif

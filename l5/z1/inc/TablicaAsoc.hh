@@ -1,12 +1,22 @@
 #ifndef TABL_ASOC_HH
 #define TABL_ASOC_HH
-#include <string>
+#include "ITablicaAsoc.hh"
+#include "TablicaHash.hh"
 
-class TablicaAsoc
+template <class Typ>
+class TablicaAsoc: public ITablicaAsoc<Typ>
 {
+protected:
+  TablicaHash<Typ> table;
 public:
-  virtual string operator [] (string) const =0;
-  virtual string& operator [] (string) =0;
+  virtual Typ operator [] (string) const;
+  virtual Typ& operator [] (string);
+  virtual void add(string key, Typ value)
+  { table.add( key,value);}
+  virtual Typ remove(string key)
+  {return table.remove( key);}
+  
 };
 
+#include "../src/TablicaAsoc.cpp"
 #endif
