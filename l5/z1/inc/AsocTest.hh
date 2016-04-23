@@ -13,6 +13,7 @@ public:
   AsocTest(){};
   virtual bool prepare(int size);
   virtual bool run();
+  void clear() {table.clear();}
 };
 
 #endif

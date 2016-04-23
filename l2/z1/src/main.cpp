@@ -9,9 +9,9 @@ int main()
 {
   int liczbaElementow[ELEM] = {10, 1000, 100000, 1000000, 100000000};
   double Srednia;
-  tablica1Dtest Bolt;
+  IRunnable* Bolt=new tablica1Dtest();
   ofstream Wyniki, WynikiSrednie;
-  Stoper czas;
+  IStoper* czas=new Stoper();
 
   WynikiSrednie.open("SredniaIII.csv");
   Wyniki.open("WynikiIII.csv");
@@ -27,27 +27,26 @@ int main()
   for (int j = 0;j < ELEM; ++j){
     Srednia = 0;
     for (int i = 0; i < LAPS; ++i){
-      Bolt.prepare(liczbaElementow[j]);
-      czas.start();
-      if(Bolt.run())
+      Bolt->prepare(liczbaElementow[j]);
+      czas->start();
+      if(Bolt->run())
 	{
-	  czas.stop();
-	  Srednia += czas.getElapsedTime()/LAPS;
+	  czas->stop();
+	  Srednia += czas->getElapsedTime()/LAPS;
 	  Wyniki << i << "," << liczbaElementow[j] << ",";
-	  if(!czas.dumpToFile(Wyniki))
+	  if(!czas->dumpToFile(Wyniki))
 	    cerr << "Zapis nr " <<i<< "nieudany, dla liczby elementow"<< liczbaElementow[j]<<endl;
 	}
-      
+
       else {
-	czas.stop();
+	czas->stop();
 	cout << i<<". zapis "<< liczbaElementow[j] <<" elementów nie powiódł się" << endl;
       }
     }
     WynikiSrednie << liczbaElementow[j] << "," << Srednia << endl;
   }
-  Bolt.prepare(10);
-  Bolt.run();
-  Bolt.Wypisz();
+  //Bolt->prepare(10);
+  //Bolt->run();
+  //Bolt->Wypisz();
 
 }
-

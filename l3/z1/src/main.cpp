@@ -10,12 +10,12 @@ using namespace std;
 
 int main()
 {
-  /* 
+
   int liczbaElementow[ELEM] = {10, 1000, 10000, 100000, 1000000};
   double Srednia;
-  ListTest Bolt;
+  IRunnable* Bolt= new ListTest();
   ofstream Wyniki, WynikiSrednie;
-  Stoper czas;
+  IStoper* czas=new Stoper();
 
   WynikiSrednie.open("Srednia.csv");
   Wyniki.open("Wyniki.csv");
@@ -31,48 +31,48 @@ int main()
   for (int j = 0;j < ELEM; ++j){
     Srednia = 0;
     for (int i = 0; i < LAPS; ++i){
-      if(Bolt.prepare(liczbaElementow[j])){
-	czas.start();
-	if(Bolt.run())
+      if(Bolt->prepare(liczbaElementow[j])){
+	czas->start();
+	if(Bolt->run())
 	  {
-	    czas.stop();
-	    Srednia += czas.getElapsedTime()/LAPS;
+	    czas->stop();
+	    Srednia += czas->getElapsedTime()/LAPS;
 	    Wyniki << i << "," << liczbaElementow[j] << ",";
-	    if(!czas.dumpToFile(Wyniki))
+	    if(!czas->dumpToFile(Wyniki))
 	      cerr << "Zapis nr " <<i<< "nieudany, dla liczby elementow"<< liczbaElementow[j]<<endl;
 	  }
-      
+
 	else {
-	  czas.stop();
+	  czas->stop();
 	  cout << i<<". zapis "<< liczbaElementow[j] <<" elementów nie powiódł się" << endl;
 	}
       }
       else{
 	cerr<< "Zbyt krotki tekst dla "<< liczbaElementow[j] <<" elementow."<< endl;
 	return 2;
-      } 
+      }
     }
 	   WynikiSrednie << liczbaElementow[j] << "," << Srednia << endl;
   }
-  */
+  /*
   ListTest Lista;
   StackTest Stos;
   QueueTest Kolejka;
- 
+
   Lista.prepare(10);
   Lista.display();
   cout<<Lista.get(9)<<endl;
   Lista.reset();
   Lista.display();
   Lista.prepare(10);
-  try{  
+  try{
     Lista.get(11);
   }
   catch(EmptyListException)
-    {  
+    {
       cout<<"Wyjatek"<<endl;
     }
-  
+
   try{
     Stos.pop();
   }
@@ -108,6 +108,5 @@ int main()
   Kolejka.display();
   if(Kolejka.isEmpty())
     cout<<"Pusta"<<endl;
-
+*/
 }
-

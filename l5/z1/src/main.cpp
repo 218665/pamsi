@@ -2,13 +2,14 @@
 #include "../inc/IRunnable.hh"
 #include "../inc/Stoper.hh"
 #include "../inc/AsocTest.hh"
+#include <fstream>
 using namespace std;
 #define LAPS 10
-#define ELEM 5
+#define ELEM 1000000
 
 int main()
 {
-  /*  
+
   IStoper* czas = new Stoper();
   IRunnable* bolt= new AsocTest();
   double srednia;
@@ -24,25 +25,28 @@ int main()
       cout << "NOK"<<endl;
   }
     cout <<"Srednia: " <<srednia << endl;
-  */
+  /*
   AsocTest Test;
   IStoper* czas = new Stoper();
   ofstream plik;
   ifstream ksiazka;
   string word;
-  ksiazka.open("test.doc");
   plik.open("WynikiZapis.csv");
-  plik << "N-ty element," <<"Czas zapisu"<<endl; 
-  for (int i =0; i<1e6;++i )
+  plik << "N elementów," <<"Czas zapisu"<<endl;
+  for (int i =0; i<LAPS;++i )
     {
-      ksiazka >> word;
+      ksiazka.open("test.doc");
       czas -> start();
-      Test.add(word, i);
+      for (int i = 0; i<ELEM; ++i)
+        {
+          ksiazka >> word;
+          Test.add(word, rand()%MAX);
+        }
       czas -> stop();
-      if((i%100) == 0)
-	plik << i <<"," << czas -> getElapsedTime() <<endl;
+      ksiazka.close();
+      Test.clear();
+      plik << ELEM <<"," << czas -> getElapsedTime() <<endl;
     }
   plik.close();
-  ksiazka.close();
+  */
 }
-

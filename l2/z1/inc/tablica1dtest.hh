@@ -12,8 +12,8 @@ public:
   void Wypisz();
   bool WypelnijTablice(int LiczbaElementow);
   void Reset();
-  bool run();
-  bool prepare(int);
+  virtual bool run();
+  virtual bool prepare(int);
 };
 
 #endif

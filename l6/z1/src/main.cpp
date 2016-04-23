@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-  /*  
+  /*
   IStoper* czas = new Stoper();
   IRunnable* bolt= new AsocTest();
   double srednia;
@@ -24,5 +24,6 @@ int main()
   }
     cout <<"Srednia: " <<srednia << endl;
   */
-}
 
+
+}
