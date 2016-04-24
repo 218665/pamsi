@@ -1,3 +1,3 @@
 # pamsi
-Repozytorium na potrzeby kursu: "Projektowanie algorytmów i mtedy sztucznej inteligencji"
+Repozytorium na potrzeby kursu: "Projektowanie algorytmów i metody sztucznej inteligencji"
 PWr

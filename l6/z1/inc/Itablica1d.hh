@@ -1,6 +1,7 @@
 #ifndef ITABLICA1D
 #define ITABLICA1D
 #include <iostream>
+#include "RBleaf.hh"
 using namespace std;
 
 template <class Typ>

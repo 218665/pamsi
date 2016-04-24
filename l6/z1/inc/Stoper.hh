@@ -12,7 +12,7 @@ private:
 public:
   virtual  void start() {  startTime = std::chrono::steady_clock::now();isWork =true;}
   virtual void stop();
-  virtual double getElapsedTime() {return  std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime).count()/1e6;}
+  virtual double getElapsedTime() {return  std::chrono::duration_cast<std::chrono::nanoseconds>(stopTime - startTime).count();}
   virtual bool dumpToFile(ofstream& Plik);
 };
 #endif
