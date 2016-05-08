@@ -21,4 +21,8 @@ class EmptyTableException
 class BadHash
 {
 };
-#endif 
+
+class EmptyGraphException
+{
+};
+#endif

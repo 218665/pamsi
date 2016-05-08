@@ -1,53 +1,57 @@
-#include <iostream>
 #include "../inc/IRunnable.hh"
+#include <iostream>
 #include "../inc/Stoper.hh"
-#include "../inc/DrzewoTest.hh"
+#include "../inc/GraphTest.hh"
 
 using namespace std;
 #define LAPS 10
-#define ELEM 6
+#define ELEM 4
 
 
 int main()
 {
-  /*
-  int rozmiary[ELEM]= {10, 100 , 1000, 10000, 100000, 10000000};
+
+  int rozmiary[ELEM]= {10, 100 , 1000, 10000};
   IStoper* czas = new Stoper();
-  IRunnable* bolt= new DrzewoTest();
+  IRunnable* bolt= new GraphTest();
   double srednia;
   for (int j = 0; j< ELEM; ++j){
-    bolt->prepare(rozmiary[j]);
     for(int i = 0; i < LAPS; ++i){
+      bolt->prepare(rozmiary[j]);
       czas ->start();
       if(bolt->run()){
         czas -> stop();
-         cout << fixed << setprecision(8) << czas -> getElapsedTime() << endl;
+        cout << fixed << setprecision(8) << czas -> getElapsedTime() << endl;
         srednia += (czas -> getElapsedTime()/10);
       }
       else
-        cout << "NOK"<<endl;
+      cout << "NOK"<<endl;
     }
     cout <<"Srednia: " <<srednia << endl;
   }
-  */
-  int rozmiary[ELEM]= {100, 1000,10000, 1000000, 10000000, 100000000};
-  DrzewoTest Test;
-  IStoper* czas = new Stoper();
-  ofstream plik;
-  string word;
-  plik.open("WynikiZapis.csv");
-  plik << "N elementów," <<"Czas zapisu"<<endl;
-  for (int j = 0; j< ELEM; ++j){
-    Test.prepare(rozmiary[j]);
-    for (int i =0; i<LAPS;++i )
-      {
-        czas -> start();
-        if (Test.run()) czas -> stop();
-        plik << rozmiary[j] <<"," << czas -> getElapsedTime() <<endl;
-      }
+/*
+GraphTest graf;
+graf.addEdge(0,1);
+graf.addEdge(0,4);
+graf.addEdge(0,2);
+graf.addEdge(1,3);
+graf.addEdge(2,4);
+IList<int>* sasiedzi;
+for (int i = 0; i<5; ++i)
+{
+  sasiedzi = graf.getNeighbours(i);
+  cout <<"Sasiedzi " << i << ": ";
+  while (!sasiedzi->isEmpty()) {
+    cout << sasiedzi->remove(0) <<" ";
   }
-  plik.close();
-
-Test.prepare (30);
-Test.Wypisz();
+  delete sasiedzi;
+  cout << endl;
+}
+cout << "Macierz :"<<endl;
+graf.wypiszMacierz();
+graf.addVertex(11);
+cout << "Macierz :"<<endl;
+graf.wypiszMacierz();
+if(graf.run()) cout << "Znaleziono sciezke" << endl;
+*/
 }

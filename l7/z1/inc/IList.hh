@@ -1,7 +1,7 @@
 #ifndef ILIST
 #define ILIST
 /*!
-  \file 
+  \file
   \brief Definicja klasy IList
 
   Plik zawiera definicje interfejsu listy
@@ -11,13 +11,14 @@
 /*!
   \brief Interfejs listy
 
-  Na liste mozemy wpisywac na każde miejsce 
+  Na liste mozemy wpisywac na każde miejsce
   i usuwać z każdego miejsca
 */
 template <typename Typ>
 class IList
 {
 public:
+  virtual ~IList() {};
   /*!
     \brief Zapisywanie na liste
   */
@@ -39,6 +40,6 @@ public:
   */
   virtual Typ get(int) const =0;
 };
-  
 
-#endif 
+
+#endif
