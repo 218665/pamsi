@@ -25,11 +25,11 @@ void Graph::powiekszMacierz()
   Macierz = MacierzPomocnicza;
 }
 
-void Graph::addEdge(int x, int y)
+void Graph::addEdge(int x, int y, int value)
 {
   if ((x < rozmiarMacierzy) && (y < rozmiarMacierzy))
   {
-    Macierz[x][y] = 1; Macierz[y][x]=1;
+    Macierz[x][y] = value; Macierz[y][x]=value;
   }
   else throw(EmptyGraphException());
 }

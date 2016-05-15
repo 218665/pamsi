@@ -1,7 +1,7 @@
 #ifndef IQUEUE
 #define IQUEUE
 /*!
-  \file 
+  \file
   \brief Definicja klasy IQueue
 
   Plik zawiera klase abstrakcyjną, która jest interfejsem kolejki
@@ -22,6 +22,7 @@ public:
   virtual void enqueue(Typ) =0;
   virtual Typ dequeue() = 0;
   virtual Typ front()=0;
+  virtual ~IQueue() {};
 };
 
 #endif

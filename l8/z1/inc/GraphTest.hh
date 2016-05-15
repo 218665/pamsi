@@ -8,13 +8,17 @@
 #define ZNALEZIONE 1
 #define POWROTNY 2
 #define ODWIEDZONY 3
-class GraphTest: public Graph
+class GraphTest: public Graph, public IRunnable
 {
 private:
-
+  int** kopiaMacierzy;
+  int dystans;
 public:
   void wypiszMacierz();
-  void BB (int start, int stop);
+  int BB (int start, int stop);
+  int branchAndBoundWithExtendedList(int start, int stop);
+  virtual bool run();
+  virtual bool prepare (int size);
 };
 
 #endif

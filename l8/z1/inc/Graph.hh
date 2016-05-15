@@ -21,7 +21,7 @@ public:
   delete [] Macierz;
   cout << "--- Graph" <<endl;}
   virtual void addVertex(int x);
-  virtual void addEdge(int x, int y);
+  virtual void addEdge(int x, int y, int value);
   virtual int removeVertex(int) {return 0;}
   virtual int removeEdge(int, int) {return 0;}
   virtual List<int>* getNeighbours(int x);

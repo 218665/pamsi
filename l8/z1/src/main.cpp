@@ -29,29 +29,28 @@ int main()
     }
     cout <<"Srednia: " <<srednia << endl;
   }
-/*
-GraphTest graf;
-graf.addEdge(0,1);
-graf.addEdge(0,4);
-graf.addEdge(0,2);
-graf.addEdge(1,3);
-graf.addEdge(2,4);
-IList<int>* sasiedzi;
-for (int i = 0; i<5; ++i)
-{
-  sasiedzi = graf.getNeighbours(i);
-  cout <<"Sasiedzi " << i << ": ";
-  while (!sasiedzi->isEmpty()) {
-    cout << sasiedzi->remove(0) <<" ";
-  }
-  delete sasiedzi;
-  cout << endl;
-}
-cout << "Macierz :"<<endl;
-graf.wypiszMacierz();
-graf.addVertex(11);
-cout << "Macierz :"<<endl;
-graf.wypiszMacierz();
-if(graf.run()) cout << "Znaleziono sciezke" << endl;
-*/
+
+
+  // GraphTest graf;
+  // graf.addEdge(0,1,3);
+  // graf.addEdge(0,2,3);
+  // graf.addEdge(1,2,5);
+  // graf.addEdge(1,3,2);
+  // graf.addEdge(2,4,2);
+  // graf.addEdge(4,5,2);
+  // graf.addEdge(3,5,3);
+  // graf.addEdge(3,7,4);
+  // graf.addEdge(5,7,1);
+  // graf.addEdge(2,6,4);
+  // graf.addEdge(6,8,5);
+  // graf.addEdge(8,7,7);
+  // graf.wypiszMacierz();
+  // for (int i=0; i< 9; ++i)
+  // {
+  //   for (int j=0; j<9; ++j)
+  //   {
+  //     cout<< "Droga "<<i<<" , "<<j<<": " << graf.BB(i,j)<< endl;
+  //     cout << "Skrót "<<i<<" , "<<j<<": " << graf.branchAndBoundWithExtendedList(i,j)<<endl;
+  //   }
+  // }
 }
