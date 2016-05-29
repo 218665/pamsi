@@ -20,4 +20,23 @@ Ocena: 3
 
 # Lab6 - tablica asocjacyjna
 
-brak sprawozdania
+Ocena: 4,5
+
+# Lab7 - Drzewa
+
+Brak implementacji drzewa czerwono-czarnego.
+Sprawozdanie opisuje poprawną implementację drzewa BST, w którym zaimplementowano
+metodę równoważącą to drzewo.
+
+Ocena: 4
+
+# Lab8 - grafy (dfs,bfs)
+
+Implementacja o złożoności kwadratowej odbiega od teoretycznego O(|V|+|E|),
+należało wskazać przyczynę tego odstępstwa.
+
+ocena: 4
+
+# Lab9 - grafy (b&b)
+
+Ocena: 5
